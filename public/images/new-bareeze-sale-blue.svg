@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background rectangle with specified blue color -->
+  <rect width="800" height="400" fill="#3498db"/>
+  
+  <!-- Text styling -->
+  <text x="400" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white">
+    EXCLUSIVE FRIDAY
+  </text>
+  <text x="400" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="white">
+    SALE
+  </text>
+</svg>

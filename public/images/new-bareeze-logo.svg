@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <!-- Background rectangle with the blue color from 'bareeze' -->
+  <rect width="300" height="100" fill="#3498db" rx="10" ry="10"/>
+  
+  <!-- Text styling -->
+  <text x="150" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#ffffff">
+    new
+    <tspan fill="#f0f8ff">bareeze</tspan>
+  </text>
+  
+  <!-- Subtle breeze effect with curved lines -->
+  <path d="M50 30 Q100 10, 150 30 T250 30" stroke="#f0f8ff" stroke-width="3" fill="none" opacity="0.5"/>
+  <path d="M50 40 Q100 20, 150 40 T250 40" stroke="#f0f8ff" stroke-width="2" fill="none" opacity="0.3"/>
+</svg>

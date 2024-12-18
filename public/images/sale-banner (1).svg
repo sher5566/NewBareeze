@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#F5F5F5"/>
+  
+  <!-- Text -->
+  <text x="400" y="150" font-family="Arial, sans-serif" font-size="48" fill="#2C3E50" text-anchor="middle" font-weight="bold">EXCLUSIVE FRIDAY</text>
+  <text x="400" y="250" font-family="Arial, sans-serif" font-size="120" fill="#34495E" text-anchor="middle" font-weight="bold">SALE</text>
+</svg>

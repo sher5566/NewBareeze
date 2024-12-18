@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="letterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#f8fafc"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Shape -->
+  <circle cx="100" cy="100" r="98" fill="url(#bgGradient)"/>
+  
+  <!-- Lowercase n -->
+  <path d="M55 120 L55 80 
+           C55 70, 65 65, 75 65 
+           C85 65, 95 70, 95 80
+           L95 120"
+        fill="none"
+        stroke="url(#letterGradient)"
+        stroke-width="14"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+        
+  <!-- Uppercase B -->
+  <path d="M95 60 L130 60 
+           Q150 60 150 80 
+           Q150 95 135 100
+           Q155 105 155 120
+           Q155 140 135 140
+           L95 140"
+        fill="none"
+        stroke="url(#letterGradient)"
+        stroke-width="14"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
