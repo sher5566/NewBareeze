@@ -150,7 +150,7 @@ const ContactUs = () => {
 
         {formStatus === "success" && (
           <div className="mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
-            Thank you for your message! We'll get back to you soon.
+            Thank you for your message! We ll get back to you soon.
           </div>
         )}
       </div>
