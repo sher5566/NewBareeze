@@ -8,6 +8,7 @@ import TypographyAtom from "../../global/typography/Typography";
 import { Btn } from "../../global/buttons/Button";
 import ProductPrice from "./ProductPrice";
 import { addToCart } from "../../../redux/slices/cartslice/Cartslice";
+import { Helper } from "../../../utils/helpers/index";
 
 /**
  * @typedef {Object} Product
@@ -75,17 +76,17 @@ const ProductCard = ({ product }) => {
     // Generate unique SKU for the product
     const sku = `${product.Category}-${product.id}`.toUpperCase();
 
-    // Prepare cart item object with default values
+    // Prepare cart item object with discounted price
     const cartItem = {
       productId: product.id,
       title: product.title,
       color: product.Color,
       sku: sku,
-      price: product.price, // Default to base price
+      price: product.price, // Use the calculated discounted price
       quantity: 1, // Default quantity
       image: product.images[0],
       size: "2-PIECES", // Default size
-      discount: product.Discount,
+      discount: product.Discount, // Discount percentage
     };
 
     // Dispatch add to cart action

@@ -392,16 +392,15 @@ export const Helper = {
      */
     footerLinks: {
       information: [
-        { text: "FAQs", href: "/storeInformation" },
-        { text: "Privacy Policy", href: "/storeInformation" },
-        { text: "Exchange Policy", href: "/storeInformation" },
-        { text: "Shipping Policy", href: "/storeInformation" },
-        { text: "Store Locator", href: "/storeInformation" },
+        { text: "FAQs", href: "/storeInformation/faq" },
+        { text: "Privacy Policy", href: "/storeInformation/privacyPolicy" },
+        { text: "Exchange Policy", href: "/storeInformation/exchangepolicy" },
+        { text: "Shipping Policy", href: "/storeInformation/shippingPolicy" },
+        { text: "Store Locator", href: "/storeInformation/storeLocation" },
       ],
       company: [
-        { text: "About Us", href: "/storeInformation" },
-        { text: "Contact Us", href: "/storeInformation" },
-        { text: "Look Book", href: "/storeInformation" },
+        { text: "About Us", href: "/storeInformation/aboutUs" },
+        { text: "Contact Us", href: "/storeInformation/contactus" },
       ],
     },
 

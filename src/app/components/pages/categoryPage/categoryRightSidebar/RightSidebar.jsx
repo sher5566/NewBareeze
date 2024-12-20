@@ -25,6 +25,19 @@ const CartSidebar = ({ isOpen, onClose }) => {
   const subTotal = useSelector((state) => state.cart.subTotal);
   const orderNote = useSelector((state) => state.cart.orderNote);
 
+  const calculateSubTotal = () => {
+    return cartItems.reduce((total, item) => {
+      // Calculate discounted price using the helper function
+      const itemTotal =
+        item.discount && item.discount !== "0%"
+          ? Helper.global.calculateDiscountedPrice(item.price, item.discount) *
+            item.quantity
+          : item.price * item.quantity; // Original price if no discount
+
+      return total + itemTotal;
+    }, 0);
+  };
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -217,7 +230,7 @@ const CartSidebar = ({ isOpen, onClose }) => {
                 additionalClasses="font-medium text-sm md:text-base"
               />
               <TypographyAtom
-                text={`PKR ${subTotal.toLocaleString()}`}
+                text={`PKR ${calculateSubTotal().toLocaleString()}`}
                 type="p"
                 additionalClasses="font-medium text-sm md:text-base"
               />
