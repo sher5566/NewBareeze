@@ -3,10 +3,11 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Btn } from "../../../global/buttons/Button";
 import DynamicIcon from "../../../global/icons/index";
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, Suspense } from "react";
 import TypographyAtom from "../../../global/typography/Typography";
 import { useSelector } from "react-redux";
 import { Helper } from "../../../../utils/helpers/index";
+import LoadingSpinner from "../../Loading/LoadingSpinner";
 
 /**
  * CategorySidebar Component
@@ -20,7 +21,7 @@ import { Helper } from "../../../../utils/helpers/index";
  *
  * @returns {JSX.Element} The Category Sidebar component
  */
-const CategorySidebar = ({ isOpen, onClose }) => {
+const CategorySidebarContent = ({ isOpen, onClose }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -133,6 +134,23 @@ const CategorySidebar = ({ isOpen, onClose }) => {
         </div>
       </div>
     </>
+  );
+};
+
+/**
+ * Parent Component with Suspense Boundary
+ */
+const CategorySidebar = ({ isOpen, onClose }) => {
+  return (
+    <Suspense
+      fallback={
+        <div>
+          <LoadingSpinner />
+        </div>
+      }
+    >
+      <CategorySidebarContent isOpen={isOpen} onClose={onClose} />
+    </Suspense>
   );
 };
 

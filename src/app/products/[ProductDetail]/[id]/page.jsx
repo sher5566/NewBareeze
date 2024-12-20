@@ -10,7 +10,7 @@
  * @requires ../../../../components/global/typography/Typography
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useRouter } from "next/navigation";
 import { Helper } from "../../../utils/helpers/index";
@@ -20,6 +20,7 @@ import { addToCart } from "../../../redux/slices/cartslice/Cartslice";
 import { toast, Toaster } from "react-hot-toast";
 import { setProducts } from "../../../redux/slices/products/products";
 import ProductService from "../../../api/ProductsService";
+import LoadingSpinner from "../.././../components/pages/Loading/LoadingSpinner";
 
 /**
  * @typedef {Object} Product
@@ -48,10 +49,9 @@ import ProductService from "../../../api/ProductsService";
  *   <ProductDetail />
  * )
  */
-const ProductDetail = () => {
+const ProductContent = ({ dispatch }) => {
   const router = useRouter();
   const params = useParams();
-  const dispatch = useDispatch();
 
   /**
    * @typedef {Object} ComponentState
@@ -420,6 +420,22 @@ const ProductDetail = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const ProductDetail = () => {
+  const dispatch = useDispatch();
+
+  return (
+    <Suspense
+      fallback={
+        <div>
+          <LoadingSpinner />
+        </div>
+      }
+    >
+      <ProductContent dispatch={dispatch} />
+    </Suspense>
   );
 };
 
