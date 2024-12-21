@@ -1,15 +1,15 @@
 import { productsApi } from "../utils/data/api";
+import DiscountService from "./DiscountService";
 
 class ProductServiceClass {
-  /**
-   * Get all products from the dummy data
-   * @returns {Object} Contains success status and products data
-   */
   getProducts() {
     try {
+      // Get products with current discount applied
+      const discountedProducts = DiscountService.getDiscountedProducts();
+
       return {
         success: true,
-        data: productsApi.productList,
+        data: discountedProducts.productList,
       };
     } catch (error) {
       return {
